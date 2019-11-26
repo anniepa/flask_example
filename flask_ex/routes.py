@@ -17,6 +17,7 @@ def index():
 @login_required
 def trainer(trainername):
     #TODO: convert url to /trainer/<id> when you implement trainer numbers
+    #TODO: animate a count down for session
     if current_user.is_authenticated and current_user.username == trainername:
         user = Trainer.query.filter_by(username = trainername).first_or_404()
         pokemon = Pokemon.query.filter_by(trainer = user.username).all()
@@ -64,6 +65,7 @@ def register():
 @app.route('/trainer/<trainername>/register_pokemon', methods = ['GET','POST'])
 @login_required
 def register_pokemon(trainername):
+    #TODO: compensate for fleshed out pokemon model
     user = Trainer.query.filter_by(username = trainername).first_or_404()
     form = RegisterPokemonForm()
     if form.validate_on_submit():

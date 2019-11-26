@@ -20,6 +20,7 @@ class Trainer(UserMixin, db.Model):
 
 
 class Session(db.Model):
+    #TODO: auto delete
     id = db.Column(db.Integer, primary_key = True)
     pokemon = db.Column(db.String(140), db.ForeignKey('pokemon.nickname'))
     times_start = db.Column(db.DateTime)
