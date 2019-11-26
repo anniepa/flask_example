@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block content %}
+    <div>
+      <a href="{{ url_for('register_pokemon', trainername = trainer.username) }}">Register Pokemon</a>
+    </div>
+    <h1>Trainer: {{ trainer.username }}</h1>
+    <hr>
+    <p>Active Sessions</p>
+    {% for s in sessions %}
+<p> {{ s.pokemon }} is training for {{ s.sess_length }} hours and started at {{ s.times_start.strftime("%c") }} and will end at {{ s.times_end.strftime("%c") }} </p>
+{% endfor %}
+
+    {% for p in pokemon %}
+<p>
+  <a href="{{ url_for('pokemon', trainername = trainer.username, pokenickname = p.nickname) }}">{{ p.nickname }}</a>    </p>
+{% endfor %}
+    <div>
+      <a href="{{ url_for('add_session', trainername = trainer.username) }}">Add Training Session</a>
+    </div>
+{% endblock %}

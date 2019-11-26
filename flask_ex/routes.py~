@@ -1,0 +1,7 @@
+from flask_ex import app
+
+@app.route('/')
+@app.route('/index')
+
+def index():
+    return "hewwo world bih"

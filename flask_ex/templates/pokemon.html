@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block content %}
+<h1>{{pokemon.species}} : {{ pokemon.nickname }}</h1>
+<h1> Level : {{ pokemon.level }} </h1>
+
+{% endblock %}

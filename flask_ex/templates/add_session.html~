@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Pokemon Registration</h1>
+    <form action="" method="post">
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.species.label }}<br>
+            {{ form.species(size=32) }}<br>
+        </p>
+        <p>
+            {{ form.nickname.label }}<br>
+            {{ form.nickname(size=32) }}<br>
+        </p>
+	<p>
+            {{ form.level.label }}<br>
+            {{ form.level(size=32) }}<br>
+        </p>
+	<p>
+	  {{ form.pokerus() }}
+	  {{ form.pokerus.label }}
+	</p>
+
+        <p>{{ form.submit() }}</p>
+    </form>
+{% endblock %}
