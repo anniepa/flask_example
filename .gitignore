@@ -16,4 +16,5 @@ lib64
 __pycache__
 pip-log.txt
 venv
+migrations
 flask_sample.db
